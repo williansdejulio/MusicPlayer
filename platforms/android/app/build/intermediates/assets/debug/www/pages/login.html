@@ -1,0 +1,22 @@
+<section id="login" class="full-cover bg-login">
+
+    <div class="bg-cover" ng-show="showLoading">
+        <div class="login-gif-configuration">
+            <img src="img/loading.gif" />
+            <span>{{configuration_message}}</span>
+        </div>
+    </div>
+
+    <div class="login">
+        <img class="half-img img-login" src="img/nullit-logo.png" alt="Null.it">
+
+        <input class="input-login user-icon" type="text" ng-model="login" id="usuario" placeholder="Usuário">
+        <input class="input-login password-icon" type="password" ng-model="senha" id="senha" placeholder="Senha">
+
+        <button class="btn-purple" ng-click="logar(login, senha)">Login</button>
+
+        <a class="text-login" href="#/esqueceu-sua-senha">Esqueceu sua senha?</a>
+        
+    </div>
+    
+</section>
