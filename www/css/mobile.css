@@ -932,11 +932,16 @@ textarea:disabled{
     animation-name: fadeIn;
 }
 
-/* HOME */
+/* PLAYER */
 
 .hello-world {
     text-align: center;
     font-size: 20px;
     color: #cccccc;
     padding: 20px;
+}
+
+#musicRange {
+    width: 100%;
+    margin: 0;
 }

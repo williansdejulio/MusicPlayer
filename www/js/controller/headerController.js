@@ -6,8 +6,8 @@ app.controller("headerController", function ($scope, $location) {
 
     /* POPULAR TÍTULO DA PÁGINA */
     $scope.pageTitle = '';
-    if ($scope.pathPage == '/home') {
-        $scope.pageTitle = 'HOME';
+    if ($scope.pathPage == '/player') {
+        $scope.pageTitle = 'PLAYER';
     } else if ($scope.pathPage == '/musicas') {
         $scope.pageTitle = 'MÚSICAS';
     } else if ($scope.pathPage == '/playlists') {

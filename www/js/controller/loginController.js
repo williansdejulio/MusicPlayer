@@ -6,14 +6,14 @@ app.controller("loginController", function ($scope, $http, utilService) {
 
     var authorization = utilService.getToken();
     if (authorization != null) {
-        window.location.replace("#/home");
+        window.location.replace("#/player");
     }
 
     document.getElementById('body').style.transition = "";
 
     $scope.logar = function (login, senha) {
         $scope.showLoading = true;
-        window.location.replace("#/home");
+        window.location.replace("#/player");
 
         /*
         var data = "username=" + login + "&password=" + senha + "&login_type=TESTE&grant_type=password";
@@ -21,7 +21,7 @@ app.controller("loginController", function ($scope, $http, utilService) {
         $http.post(endpoint + "Token", data).then(function (response) {
             console.log("LOGIN SUCCESSFUL: " + response);
             localStorage.setItem("token_authorization", JSON.stringify(response.data));
-            window.location.replace("#/home");
+            window.location.replace("#/player");
 
         }, function (response) {
             // TODO: SHOW LABEL LOGIN FAILED

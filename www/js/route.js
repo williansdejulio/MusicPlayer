@@ -8,9 +8,9 @@
             templateUrl: 'pages/login.html',
             controller: 'loginController'
         })
-        .when('/home', {
-            templateUrl: 'pages/home.html',
-            controller: 'homeController'
+        .when('/player', {
+            templateUrl: 'pages/player.html',
+            controller: 'playerController'
         })
         .when('/esqueceu-sua-senha', {
             templateUrl: 'pages/esqueceu-sua-senha.html',

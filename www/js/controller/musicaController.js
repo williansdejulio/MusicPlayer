@@ -2,7 +2,6 @@ app.controller("musicaController", function ($scope, musicService) {
     $("html, body").scrollTop(0);    
 
     $scope.musicas = [];
-    x = [];
 
     $scope.loadMusicas = function () {
 
@@ -10,9 +9,9 @@ app.controller("musicaController", function ($scope, musicService) {
 
         musicService.getSongs().then(function (result) {
             $scope.musicas = result;
-            x = result; // TESTE
             $scope.$apply();
-        });        
+        });
+        
     }
 
 });

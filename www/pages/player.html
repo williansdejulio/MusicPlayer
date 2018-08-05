@@ -1,0 +1,17 @@
+<header ng-include src="'includes/header.html'" id="header-include"></header>
+<section id="player" class="animated fade-in">
+
+    <div class="content-full bg-black" ng-init="loadConteudo()">
+        <div class="hello-world">
+            PLAYER
+        </div>
+        
+        <button id="btnPlay" ng-click="playPause()">PLAY</button><br/>
+        
+        <button id="btnIncreaseRate" ng-click="increaseRate()">++ INCREASE RATE</button><br/>
+        <button id="btnDecreaseRate" ng-click="decreaseRate()">-- DECREASE RATE</button><br/>
+
+        <input id="musicRange" type="range" min="0" max="100" value="0" step="1" />
+
+    </div>
+</section>
