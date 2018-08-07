@@ -10,8 +10,8 @@ app.run(['$rootScope', function($rootScope) {
     $rootScope.actualRate = 1;
 
     $rootScope.sound = new Howl({
-        //src: 'file:///android_asset/www/songs/psycho.mp3', // -- ANDROID --
-        src: 'www/songs/psycho.mp3',                   // -- PC --
+        src: 'file:///android_asset/www/songs/psycho.mp3', // -- ANDROID --
+        //src: 'www/songs/psycho.mp3',                   // -- PC --
         html5: true,
         onplay: function () {
             $rootScope.idInterval = setInterval(function() {
@@ -35,14 +35,13 @@ app.run(['$rootScope', function($rootScope) {
     };
 
     $rootScope.increaseRate = function() {
-        $rootScope.actualRate += 0.05;
+        $rootScope.actualRate += 0.05; //fazer maximo (4, actualrate + 0.05)
         $rootScope.sound.rate($rootScope.actualRate);
     }
 
     $rootScope.decreaseRate = function() {
-        $rootScope.actualRate -= 0.05;
+        $rootScope.actualRate -= 0.05; //fazer minimo (0.5, actualrate - 0.05)
         $rootScope.sound.rate($rootScope.actualRate);
     }
-
-  }]);
+}]);
 
