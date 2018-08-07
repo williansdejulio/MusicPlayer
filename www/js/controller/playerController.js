@@ -15,14 +15,4 @@ app.controller("playerController", function ($scope, musicService) {
         });        
     }    
 
-    $scope.increaseRate = function() {
-        $rootScope.actualRate += 0.1;
-        $rootScope.sound.rate(actualRate, soundPlayID);
-    }
-
-    $scope.decreaseRate = function() {
-        $rootScope.actualRate -= 0.1;
-        $rootScope.sound.rate(actualRate, soundPlayID);
-    }
-
 });

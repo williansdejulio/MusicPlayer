@@ -11,7 +11,6 @@ app.controller("musicaController", function ($scope, musicService) {
             $scope.musicas = result;
             $scope.$apply();
         });
-        
     }
 
 });

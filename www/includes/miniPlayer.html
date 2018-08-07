@@ -1,0 +1,17 @@
+<div id="miniPlayer" ng-controller="miniPlayerController">
+    <a href="#/player">
+        <img class="icon-player" src="img/icon-disc.png" alt="" />
+    </a>
+    <a href="#/player" id="songInfo">
+        <div id="songName" class="white">Psycho</div>
+        <div id="artistName" class="white">Post Malone</div>
+    </a>
+
+    <div ng-click="playPause()" ng-show="!sound.playing()">
+        <img class="icon-player" src="img/icon-play.png" alt="PLAY" />
+    </div>
+    <div ng-click="playPause()" ng-show="sound.playing()">
+        <img class="icon-player" src="img/icon-pause.png" alt="PAUSE" />
+    </div>
+    
+</div>

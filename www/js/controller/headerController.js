@@ -26,12 +26,14 @@ app.controller("headerController", function ($scope, $location) {
     /* ABRIR MENU */
     $scope.openMenu = function () {
         body.style.transform = "translateX(-80%)";
+        $("#miniPlayer").css("transform", "translateX(80%)");
         $scope.isMenuOpen = true;
     };
 
     /* FECHAR MENU */
     $scope.closeMenu = function () {
         body.style.transform = "translateX(0)";
+        $("#miniPlayer").css("transform", "translateX(0)");
         $scope.isMenuOpen = false;
     }
 

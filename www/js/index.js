@@ -1,4 +1,4 @@
-var db;
+var media;
 
 var cordovaApp = {
     // Application Constructor
@@ -12,6 +12,8 @@ var cordovaApp = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        
+        media = new Media("http://www.noiseaddicts.com/samples_1w72b820/3926.mp3")
     },
 
     // Update DOM on a Received Event
