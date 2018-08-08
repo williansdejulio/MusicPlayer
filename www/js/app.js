@@ -10,8 +10,8 @@ app.run(['$rootScope', function($rootScope) {
     $rootScope.actualRate = 1;
 
     $rootScope.sound = new Howl({
-        src: 'file:///android_asset/www/songs/psycho.mp3', // -- ANDROID --
-        //src: 'www/songs/psycho.mp3',                   // -- PC --
+        //src: 'file:///android_asset/www/songs/psycho.mp3', // -- ANDROID --
+        src: 'www/songs/psycho.mp3',                   // -- PC --
         html5: true,
         onplay: function () {
             $rootScope.idInterval = setInterval(function() {

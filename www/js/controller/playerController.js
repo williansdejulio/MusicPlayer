@@ -1,3 +1,4 @@
+
 app.controller("playerController", function ($scope, musicService) {
     $("html, body").scrollTop(0);    
 
@@ -15,6 +16,16 @@ app.controller("playerController", function ($scope, musicService) {
         });        
     };
 
+    $("#slider").roundSlider({
+        radius: 100,
+        width: 40,
+        handleSize: "40,20",
+        handleShape: "square",
+        sliderType: "default",
+        value: 91
+    });
+
+    /*
     const options = {
       snap: 45,
       clockwise: false,
@@ -22,4 +33,6 @@ app.controller("playerController", function ($scope, musicService) {
     };
 
     const cs = new CircleSlider("speed-circle-slider", options);
+    */
+    
 });
