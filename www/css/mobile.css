@@ -979,12 +979,34 @@ textarea:disabled{
 }
 
 #musicRange {
-    width: 100%;
-    margin: 0;
+    width: 70%;
+    display: table;
+    margin: 10% auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#range-controller {
+    font-family: font-light;
+    font-size: 1.7em;
+    color: #ffffff;
+    text-align: center;
+}
+
+#time-shower-range .begin {
+    float: left;
+    margin-top: 4px; 
+    margin-left: 5%;
+}
+
+#time-shower-range .end {
+    float: right;
+    margin-top: 4px; 
+    margin-right: 5%;
 }
 
 #slider {
-    margin: 30px auto;
+    margin: 2% auto;
 }
 
 #slider .rs-path-color  {
@@ -1004,4 +1026,33 @@ textarea:disabled{
 #slider .rs-tooltip {
     color: #ffffff;
     font-size: 28px;
+}
+
+#musicRange,
+#musicRange::-webkit-slider-runnable-track,
+#musicRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+#musicRange::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 10px;
+  background: #AAA;
+}
+#musicRange::-webkit-slider-thumb {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin-top: -10px;
+  background: steelblue;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+#musicRange::-webkit-slider-thumb::before {
+  position: absolute;
+  content: '';
+  height: 10px; /* equal to height of runnable track */
+  width: 500px; /* make this bigger than the widest range input element */
+  left: -502px; /* this should be -2px - width */
+  top: 8px; /* don't change this */
+  background: #777;
 }

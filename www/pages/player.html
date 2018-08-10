@@ -3,15 +3,17 @@
 
     <div class="content-full bg-black" ng-init="loadConteudo()">
         <div class="hello-world">
-            PLAYER
+            AULA #1
+            BPM
         </div>
-        <div id="speed-circle-slider"></div>
-        <!--<button id="btnIncreaseRate" ng-click="increaseRate()">++ INCREASE RATE</button><br/>
-        <button id="btnDecreaseRate" ng-click="decreaseRate()">-- DECREASE RATE</button><br/>-->
-
-        <input id="musicRange" type="range" min="0" max="100" value="0" step="1" />
-
         <div id="slider"></div>
+        <div id="range-controller">
+            <div id="time-shower-range">
+                <div class="begin">0:00</div>
+                <div class="end">30:00</div>    
+            </div>
 
+            <input id="musicRange" type="range" min="0" max="100" value="0" step="1" />
+        </div>
     </div>
 </section>

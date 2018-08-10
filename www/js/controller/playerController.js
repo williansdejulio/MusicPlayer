@@ -24,15 +24,4 @@ app.controller("playerController", function ($scope, musicService) {
         sliderType: "default",
         value: 91
     });
-
-    /*
-    const options = {
-      snap: 45,
-      clockwise: false,
-      startPos: "top",
-    };
-
-    const cs = new CircleSlider("speed-circle-slider", options);
-    */
-    
 });
