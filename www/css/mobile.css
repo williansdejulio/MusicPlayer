@@ -56,6 +56,10 @@ html {
 
 /* GENERICS */
 
+.no-margin {
+    margin: 0 !important;
+}
+
 .full-cover {
     position: relative;
     width: 100vw;
@@ -90,6 +94,10 @@ html {
     overflow-x: hidden;
     padding-top: 60px;
     transition: filter 0.5s;
+}
+
+.mini-player-below {
+    padding-bottom: 64px;
 }
 
 .content-header-lg,
@@ -530,6 +538,10 @@ textarea:disabled{
     color: #ffffff;
 }
 
+.light-gray {
+    color: #dbdbdb;
+}
+
 .orange {
     color: #f49200;
 }
@@ -544,13 +556,6 @@ textarea:disabled{
 
 .margin-top {
     margin-top: 15px;
-}
-
-.calendar-icon,
-.search-icon {
-    max-height: 20px;
-    margin: 0 auto;
-    display: block;
 }
 
 /* SLIDER  */
@@ -734,6 +739,15 @@ textarea:disabled{
     background-repeat: no-repeat;
     background-size: 25px;
 }
+
+.search-icon {
+    background-image: url('../img/icon-search.png');
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding-left: 34px;
+}
+
 
 .login>.btn-purple {
     font-size: 1.5em;
@@ -943,8 +957,8 @@ textarea:disabled{
     bottom: 0;
     border-top: solid 1px #3e3e3e;
     background: #0a0a0a;
-    background: -moz-linear-gradient(top, #0a0a0a 13%, #000000 100%);
-    background: -webkit-linear-gradient(top, #0a0a0a 13%, #000000 100%);
+    background: -moz-linear-gradient(top, #1b1b1b 13%, #000000 100%);
+    background: -webkit-linear-gradient(top, #1b1b1b 13%, #000000 100%);
     background: linear-gradient(to bottom, #1b1b1b 13%, #0a0a0a 100%);
     transition: transform 0.5s;
     z-index: 2;
@@ -955,17 +969,17 @@ textarea:disabled{
     padding: 9px;
 }
 
-#songInfo {
+.aula-info {
     flex-grow: 1;
     padding: 9px;
 }
 
-#songName {
+.song-name {
     font-size: 18px;
     font-weight: bold;
 }
 
-#artistName {
+.info-name {
     font-size: 12px;
 }
 
@@ -1031,28 +1045,138 @@ textarea:disabled{
 #musicRange,
 #musicRange::-webkit-slider-runnable-track,
 #musicRange::-webkit-slider-thumb {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 #musicRange::-webkit-slider-runnable-track {
-  width: 200px;
-  height: 10px;
-  background: #AAA;
+    width: 200px;
+    height: 10px;
+    background: #AAA;
 }
 #musicRange::-webkit-slider-thumb {
-  position: relative;
-  height: 30px;
-  width: 30px;
-  margin-top: -10px;
-  background: steelblue;
-  border-radius: 50%;
-  border: 2px solid white;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+    background: steelblue;
+    border-radius: 50%;
+    border: 2px solid white;
 }
+
 #musicRange::-webkit-slider-thumb::before {
-  position: absolute;
-  content: '';
-  height: 10px; /* equal to height of runnable track */
-  width: 500px; /* make this bigger than the widest range input element */
-  left: -502px; /* this should be -2px - width */
-  top: 8px; /* don't change this */
-  background: #777;
+    position: absolute;
+    content: '';
+    height: 10px; /* equal to height of runnable track */
+    width: 500px; /* make this bigger than the widest range input element */
+    left: -502px; /* this should be -2px - width */
+    top: 8px; /* don't change this */
+    background: #777;
+}
+
+.search-holder {
+    width: 100%;
+    padding: 8px 18px 0px;
+}
+
+/* CDs */
+
+.cd-container {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.cd-holder {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.cd-holder:before {
+    content: '';
+    display: table;
+    padding-top: 100%;
+}
+
+.cd-item {
+    position: relative;
+    flex-grow: 1;
+    background: #1a1a1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cd-disc {
+    position: absolute;
+    background: #404040;
+    border-radius: 50%;
+    margin: auto;
+    height: 76%;
+    width: 76%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.cd-hole {
+    position: absolute;
+    background: #1a1a1a;
+    border-radius: 50%;
+    margin: auto;
+    width: 15%;
+    height: 15%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.song-info {
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+    background: hsla(0, 0%, 10%, 0.8);
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 2em;
+    padding: 5px 12px;
+    z-index: 1;
+}
+
+/* AULA */
+
+.aula-container {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.aula-item {
+    position: relative;
+    display: flex;
+    background: #1a1a1a;
+    width: 100%;
+    margin: 8px;
+    height: 75px;
+}
+
+.aula-disc {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    left: unset;
+    right: unset;
+    margin: auto 12px;
+}
+
+.aula-song-name {
+    font-size: 22px;
 }

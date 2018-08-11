@@ -8,7 +8,7 @@
         <h1 class="title-header">{{pageTitle}}</h1>
 
         <div class="alert-div">
-            <span class="alert-number">5</span>
+            <span class="alert-number" style="display: none;">5</span>
             <img class="menu-icon" src="img/menu-icon.png" alt="Menu" ng-click="openMenu()">
         </div>
     </div>
@@ -29,20 +29,20 @@
                     PLAYER
                 </li>
             </a>
-            <a href="#/musicas">
-                <li class="menu-link white" ng-class="{'active' : pathPage == '/musicas'}" ng-click="closeMenu()">
+            <a href="#/aula">
+                <li class="menu-link white" ng-class="{'active' : pathPage == '/aula'}" ng-click="closeMenu()">
                     <div class="menu-icon-container">
-                        <img class="full-img" src="img/icon-songs.png" alt="Músicas">
+                        <img class="full-img" src="img/icon-songs.png" alt="Aulas">
                     </div>
-                    MÚSICAS
+                    AULAS
                 </li>
             </a>
-            <a href="#/playlists">
-                <li class="menu-link white" ng-class="{'active' : pathPage == '/playlists'}" ng-click="closeMenu()">
+            <a href="#/cd">
+                <li class="menu-link white" ng-class="{'active' : pathPage == '/cd'}" ng-click="closeMenu()">
                     <div class="menu-icon-container">
-                        <img class="full-img" src="img/icon-playlist.png" alt="Playlists">
+                        <img class="full-img" src="img/icon-playlist.png" alt="CDs">
                     </div>
-                    PLAYLISTS
+                    CDs
                 </li>
             </a>
             <li class="menu-link white" ng-click="logout()">

@@ -1,4 +1,4 @@
-app.controller("musicaController", function ($scope, musicService) {
+app.controller("aulaController", function ($scope, musicService) {
     $("html, body").scrollTop(0);    
 
     $scope.musicas = [];

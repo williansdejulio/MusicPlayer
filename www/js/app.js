@@ -43,5 +43,5 @@ app.run(['$rootScope', function($rootScope) {
         $rootScope.actualRate -= 0.05; //fazer minimo (0.5, actualrate - 0.05)
         $rootScope.sound.rate($rootScope.actualRate);
     }
+    
 }]);
-

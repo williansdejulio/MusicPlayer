@@ -1,4 +1,3 @@
-
 app.controller("playerController", function ($scope, musicService) {
     $("html, body").scrollTop(0);    
 

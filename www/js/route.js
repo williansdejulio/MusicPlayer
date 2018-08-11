@@ -16,12 +16,12 @@
             templateUrl: 'pages/esqueceu-sua-senha.html',
             controller: 'esqueceuSuaSenhaController'
         })
-        .when('/musicas', {
-            templateUrl: 'pages/musica.html',
-            controller: 'musicaController'
+        .when('/aula', {
+            templateUrl: 'pages/aula.html',
+            controller: 'aulaController'
         })
-        .when('/playlists', {
-            templateUrl: 'pages/playlist.html',
-            controller: 'playlistController'
+        .when('/cd', {
+            templateUrl: 'pages/cd.html',
+            controller: 'cdController'
         })
 });

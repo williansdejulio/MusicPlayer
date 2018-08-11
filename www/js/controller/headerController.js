@@ -8,10 +8,10 @@ app.controller("headerController", function ($scope, $location) {
     $scope.pageTitle = '';
     if ($scope.pathPage == '/player') {
         $scope.pageTitle = 'PLAYER';
-    } else if ($scope.pathPage == '/musicas') {
-        $scope.pageTitle = 'MÚSICAS';
-    } else if ($scope.pathPage == '/playlists') {
-        $scope.pageTitle = 'PLAYLISTS';
+    } else if ($scope.pathPage == '/aula') {
+        $scope.pageTitle = 'AULAS';
+    } else if ($scope.pathPage == '/cd') {
+        $scope.pageTitle = 'CDs';
     }
 
     /* BOTÃO VOLTAR */

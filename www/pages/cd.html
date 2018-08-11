@@ -1,0 +1,52 @@
+<header ng-include src="'includes/header.html'" id="header-include"></header>
+<section id="cd" class="animated fade-in">
+
+    <div class="content-full bg-black mini-player-below" ng-init="loadPlaylists()">
+        <div class="search-holder">
+            <input class="input-login search-icon no-margin" type="text" ng-model="search" id="usuario" placeholder="Buscar...">
+        </div>
+        <div class="cd-container">
+            <div class="cd-holder">
+                <div class="cd-item">
+                    <div class="cd-disc">
+                        <div class="cd-hole"></div>
+                    </div>
+                    <div class="song-info">CD #1</div>
+                </div>
+            </div>
+            <div class="cd-holder">
+                <div class="cd-item">
+                    <div class="cd-disc">
+                        <div class="cd-hole"></div>
+                    </div>
+                    <div class="song-info">CD #2</div>
+                </div>
+            </div>
+            <div class="cd-holder">
+                <div class="cd-item">
+                    <div class="cd-disc">
+                        <div class="cd-hole"></div>
+                    </div>
+                    <div class="song-info">CD #3</div>
+                </div>
+            </div>
+            <div class="cd-holder">
+                <div class="cd-item">
+                    <div class="cd-disc">
+                        <div class="cd-hole"></div>
+                    </div>
+                    <div class="song-info">CD #4</div>
+                </div>
+            </div>
+            <div class="cd-holder">
+                <div class="cd-item">
+                    <div class="cd-disc">
+                        <div class="cd-hole"></div>
+                    </div>
+                    <div class="song-info">CD #5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer ng-include src="'includes/miniPlayer.html'" id="footer-include"></footer>
