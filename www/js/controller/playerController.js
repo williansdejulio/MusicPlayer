@@ -1,26 +1,30 @@
-app.controller("playerController", function ($scope, musicService) {
-    $("html, body").scrollTop(0);    
-
-    $scope.musicas = [];
-    teste = [];
-
-    $scope.loadMusicas = function () {
-
-        var token_authorization = JSON.parse(localStorage.token_authorization); // USER INFO
-
-        musicService.getSongs().then(function (result) {
-            $scope.musicas = result;
-            teste = result; // TESTE
-            $scope.$apply();
-        });        
-    };
+app.controller("playerController", function ($scope, utilService) {
+    $("html, body").scrollTop(0); 
+    
+    var params = utilService.getParameters();
+    console.log(params);
+    
+    $scope.init = function() {
+        setTimeout(function() {
+            if (params.id_aula != undefined) {
+                $scope.$apply(function () {
+                    var file = params.arquivo.replace("../", endpoint + "/");
+                    $scope.sound.changeSrc(file);
+                    $scope.sound.play();
+                    $scope.aula_nome = params.nome;
+                    $scope.cd_nome = params.cdnome;
+               });
+            }
+        }, 1);
+    }
 
     $("#slider").roundSlider({
-        radius: 100,
-        width: 40,
-        handleSize: "40,20",
+        radius: 115,
+        width: 55,
+        handleSize: "55,20",
         handleShape: "square",
         sliderType: "default",
         value: 91
     });
+
 });

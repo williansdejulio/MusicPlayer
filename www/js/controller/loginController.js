@@ -18,7 +18,7 @@ app.controller("loginController", function ($scope, $http, utilService) {
         /*
         var data = "username=" + login + "&password=" + senha + "&login_type=TESTE&grant_type=password";
 
-        $http.post(endpoint + "Token", data).then(function (response) {
+        $http.post(endpoint + "API/Token", data).then(function (response) {
             console.log("LOGIN SUCCESSFUL: " + response);
             localStorage.setItem("token_authorization", JSON.stringify(response.data));
             window.location.replace("#/player");

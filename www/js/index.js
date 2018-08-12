@@ -1,4 +1,4 @@
-var media;
+var platform;
 
 var cordovaApp = {
     // Application Constructor
@@ -12,7 +12,7 @@ var cordovaApp = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        
+        platform = device.platform;
     },
 
     // Update DOM on a Received Event

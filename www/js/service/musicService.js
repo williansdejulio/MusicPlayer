@@ -8,7 +8,7 @@ app.service("musicService", function ($http) {
             resolve(data);
 
             /*
-            $http.post(endpoint + "Music", data).then(function (response) {
+            $http.post(endpoint + "API/Music", data).then(function (response) {
                 console.log("SUCCESS FULL CALL: " + response);
                 resolve(response);
 

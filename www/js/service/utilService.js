@@ -14,8 +14,12 @@ app.service("utilService", function ($http) {
     }
     
     this.getParameters = function () {
-        var search = location.hash.substring(location.hash.indexOf('?') + 1);
-        return JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+        if (location.hash.indexOf('?') != -1) {
+            var search = location.hash.substring(location.hash.indexOf('?') + 1);
+            return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+        } else {
+            return { };
+        }
     }
 
     var meses = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];

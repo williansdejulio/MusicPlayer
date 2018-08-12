@@ -1,80 +1,25 @@
 <header ng-include src="'includes/header.html'" id="header-include"></header>
 <section id="aula" class="animated fade-in">
 
-    <div class="content-full bg-black mini-player-below" ng-init="loadMusicas()">
+    <div class="content-full bg-black mini-player-below" ng-init="init()">
         <div class="search-holder">
             <input class="input-login search-icon no-margin" type="text" ng-model="search" id="usuario" placeholder="Buscar...">
         </div>
         <div class="aula-container">
-            
-            <div class="aula-item">
-                <div class="aula-disc cd-disc">
-                    <div class="cd-hole"></div>
-                </div>
-                <div class="aula-info">
-                    <div class="song-name aula-song-name white">Aula #1</div>
-                    <div class="info-name light-gray">140 BPM</div>
-                    <div class="info-name light-gray">CD #1</div>
-                </div>
+            <div class="loader" ng-show="loading">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
             </div>
-            <div class="aula-item">
+
+            <div class="aula-item" ng-repeat="aula in aulas" ng-click="goToPlayer(aula)">
                 <div class="aula-disc cd-disc">
                     <div class="cd-hole"></div>
                 </div>
                 <div class="aula-info">
-                    <div class="song-name aula-song-name white">Aula #2</div>
-                    <div class="info-name light-gray">128 BPM</div>
-                    <div class="info-name light-gray">CD #1</div>
-                </div>
-            </div>
-            <div class="aula-item">
-                <div class="aula-disc cd-disc">
-                    <div class="cd-hole"></div>
-                </div>
-                <div class="aula-info">
-                    <div class="song-name aula-song-name white">Aula #1</div>
-                    <div class="info-name light-gray">130 BPM</div>
-                    <div class="info-name light-gray">CD #2</div>
-                </div>
-            </div>
-            <div class="aula-item">
-                <div class="aula-disc cd-disc">
-                    <div class="cd-hole"></div>
-                </div>
-                <div class="aula-info">
-                    <div class="song-name aula-song-name white">Aula #2</div>
-                    <div class="info-name light-gray">140 BPM</div>
-                    <div class="info-name light-gray">CD #2</div>
-                </div>
-            </div>
-            <div class="aula-item">
-                <div class="aula-disc cd-disc">
-                    <div class="cd-hole"></div>
-                </div>
-                <div class="aula-info">
-                    <div class="song-name aula-song-name white">Aula #3</div>
-                    <div class="info-name light-gray">150 BPM</div>
-                    <div class="info-name light-gray">CD #2</div>
-                </div>
-            </div>
-            <div class="aula-item">
-                <div class="aula-disc cd-disc">
-                    <div class="cd-hole"></div>
-                </div>
-                <div class="aula-info">
-                    <div class="song-name aula-song-name white">Aula #1</div>
-                    <div class="info-name light-gray">120 BPM</div>
-                    <div class="info-name light-gray">CD #3</div>
-                </div>
-            </div>
-            <div class="aula-item">
-                <div class="aula-disc cd-disc">
-                    <div class="cd-hole"></div>
-                </div>
-                <div class="aula-info">
-                    <div class="song-name aula-song-name white">Aula #2</div>
-                    <div class="info-name light-gray">140 BPM</div>
-                    <div class="info-name light-gray">CD #3</div>
+                    <div class="song-name aula-song-name white">{{aula.nome}}</div>
+                    <div class="info-name light-gray">{{aula.bpm}} BPM</div>
+                    <div class="info-name light-gray">{{aula.cd.nome}}</div>
                 </div>
             </div>
         </div>

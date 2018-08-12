@@ -1,19 +1,29 @@
 <header ng-include src="'includes/header.html'" id="header-include"></header>
 <section id="player" class="animated fade-in">
 
-    <div class="content-full bg-black" ng-init="loadConteudo()">
-        <div class="hello-world">
-            AULA #1
-            BPM
-        </div>
-        <div id="slider"></div>
-        <div id="range-controller">
-            <div id="time-shower-range">
-                <div class="begin">0:00</div>
-                <div class="end">30:00</div>    
+    <div class="content-full bg-black" ng-init="init()">
+        <div class="player-container">
+            <div class="slider-container">
+                <div id="slider"></div>
             </div>
 
-            <input id="musicRange" type="range" min="0" max="100" value="0" step="1" />
+            <div id="range-controller">
+                <div class="time-info">0:00</div>
+
+                <input id="musicRange" type="range" min="0" max="100" value="0" step="1" />
+
+                <div class="time-info">30:00</div>
+            </div>
+
+            <div class="player-info">
+                <div class="player-song-name white">{{aula_nome}}</div>
+                <div class="player-info-name light-gray">{{cd_nome}}</div>
+            </div>
+
+            <div class="btns-holder">
+                <button ng-click="playPause()" class='btn-play' ng-class="{'paused': sound.playing()}"></button>
+            </div>
         </div>
+
     </div>
 </section>

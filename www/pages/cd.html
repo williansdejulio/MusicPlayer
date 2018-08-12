@@ -1,49 +1,23 @@
 <header ng-include src="'includes/header.html'" id="header-include"></header>
 <section id="cd" class="animated fade-in">
 
-    <div class="content-full bg-black mini-player-below" ng-init="loadPlaylists()">
+    <div class="content-full bg-black mini-player-below" ng-init="init()">
         <div class="search-holder">
             <input class="input-login search-icon no-margin" type="text" ng-model="search" id="usuario" placeholder="Buscar...">
         </div>
         <div class="cd-container">
-            <div class="cd-holder">
-                <div class="cd-item">
-                    <div class="cd-disc">
-                        <div class="cd-hole"></div>
-                    </div>
-                    <div class="song-info">CD #1</div>
-                </div>
+            <div class="loader" ng-show="loading">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
             </div>
-            <div class="cd-holder">
+
+            <div class="cd-holder" ng-repeat="cd in cds" ng-click="goToAula(cd.id_cd)">
                 <div class="cd-item">
                     <div class="cd-disc">
                         <div class="cd-hole"></div>
                     </div>
-                    <div class="song-info">CD #2</div>
-                </div>
-            </div>
-            <div class="cd-holder">
-                <div class="cd-item">
-                    <div class="cd-disc">
-                        <div class="cd-hole"></div>
-                    </div>
-                    <div class="song-info">CD #3</div>
-                </div>
-            </div>
-            <div class="cd-holder">
-                <div class="cd-item">
-                    <div class="cd-disc">
-                        <div class="cd-hole"></div>
-                    </div>
-                    <div class="song-info">CD #4</div>
-                </div>
-            </div>
-            <div class="cd-holder">
-                <div class="cd-item">
-                    <div class="cd-disc">
-                        <div class="cd-hole"></div>
-                    </div>
-                    <div class="song-info">CD #5</div>
+                    <div class="song-info">{{cd.nome}}</div>
                 </div>
             </div>
         </div>
