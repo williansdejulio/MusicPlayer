@@ -26,8 +26,11 @@
     <script type="text/javascript" src="js/lib/fastclick.js"></script>
     <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/lib/slick.min.js"></script>
-    <script type="text/javascript" src="js/lib/angular.min.js"></script>
-    <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.js"></script>
+    <script type="text/javascript" src="js/lib/hammer.js"></script>
+    <script type="text/javascript" src="js/lib/angular.hammer.js"></script>
+    
     <script type="text/javascript" src="js/lib/roundslider.min.js"></script>
     
     <script type="text/javascript" src="js/lib/howler.core.min.js"></script>
@@ -38,7 +41,7 @@
     <script type="text/javascript" src="js/index.js"></script>
 
     <script type="text/javascript" src="js/service/utilService.js"></script>
-    <script type="text/javascript" src="js/service/musicService.js"></script>
+    <script type="text/javascript" src="js/service/playerService.js"></script>
 
     <script type="text/javascript" src="js/controller/headerController.js"></script>
     <script type="text/javascript" src="js/controller/loginController.js"></script>
@@ -61,7 +64,7 @@
             /*
             if(!localStorage.previousLogin) {
                 localStorage.previousLogin = true;
-                window.location.replace("#/tutorial");
+                window.location.replace("#/create-account");
             } else {
                 window.location.replace("#/login");
             }

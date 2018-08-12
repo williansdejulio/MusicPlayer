@@ -1,4 +1,4 @@
-app.controller("aulaController", function ($scope, $http, utilService) {
+app.controller("aulaController", function ($scope, $http, $timeout, utilService, playerService) {
     $("html, body").scrollTop(0);    
 
     var params = utilService.getParameters();
@@ -10,7 +10,7 @@ app.controller("aulaController", function ($scope, $http, utilService) {
     $scope.init = function() {
         var token_authorization = JSON.parse(localStorage.token_authorization); // USER INFO
         
-        setTimeout(function() {
+        $timeout(function() {
             var data = "";
             if (params.id_cd != undefined) {
                 data = "?idCD=" + params.id_cd;
@@ -25,9 +25,13 @@ app.controller("aulaController", function ($scope, $http, utilService) {
     $scope.goToPlayer = function(aula) {
         var cdnome = (aula.cd.nome != undefined) ? aula.cd.nome : "";
         var bpm = (aula.bpm != undefined) ? aula.bpm : "";
-        var sendToPlayer = encodeURIComponent("id_aula=" + aula.id_aula + "&nome=" + aula.nome + "&arquivo=" + aula.arquivo + "&bpm=" + bpm + "&cdnome=" + cdnome);
-       
-        window.location.href = "#/player?" + sendToPlayer;
+
+        var file = aula.arquivo.replace("../", endpoint + "/");
+        playerService.changeSrcAndPlay(file);
+        playerService.setAulaNome(aula.nome);
+        playerService.setCDNome(cdnome);
+
+        window.location.href = "#/player?playing=true";
     }
 
 });

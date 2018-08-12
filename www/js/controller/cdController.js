@@ -1,4 +1,4 @@
-app.controller("cdController", function ($scope, $http) {
+app.controller("cdController", function ($scope, $timeout, $http) {
     $("html, body").scrollTop(0);    
 
     $scope.cds = [];
@@ -7,7 +7,7 @@ app.controller("cdController", function ($scope, $http) {
     $scope.init = function() {
         var token_authorization = JSON.parse(localStorage.token_authorization); // USER INFO
         
-        setTimeout(function () {
+        $timeout(function () {
             $http.get(endpoint + "API/CD").then(function (result) {
                 $scope.cds = result.data;
                 $scope.loading = false;
