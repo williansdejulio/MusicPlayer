@@ -5,7 +5,7 @@ app.controller("cdController", function ($scope, $timeout, $http) {
     $scope.loading = true;
 
     $scope.init = function() {
-        var token_authorization = JSON.parse(localStorage.token_authorization); // USER INFO
+        // var token_authorization = JSON.parse(localStorage.token_authorization); // USER INFO
         
         $timeout(function () {
             $http.get(endpoint + "API/CD").then(function (result) {

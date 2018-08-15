@@ -8,13 +8,14 @@ app.controller("aulaController", function ($scope, $http, $timeout, utilService,
     $scope.loading = true;
 
     $scope.init = function() {
-        var token_authorization = JSON.parse(localStorage.token_authorization); // USER INFO
+        // var token_authorization = JSON.parse(localStorage.token_authorization); // USER INFO
         
         $timeout(function() {
             var data = "";
             if (params.id_cd != undefined) {
                 data = "?idCD=" + params.id_cd;
             }
+            console.log(endpoint + "API/Aula" + data);
             $http.get(endpoint + "API/Aula" + data).then(function (result) {
                 $scope.aulas = result.data;
                 $scope.loading = false;
