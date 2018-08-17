@@ -101,7 +101,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
         handleSize: "55,20",
         handleShape: "square",
         sliderType: "default",
-        value: playerService.getBpm(),
+        value: playerService.getSound().rate() * playerService.getBpm(),
         drag: $scope.setBpm
     });
 });
