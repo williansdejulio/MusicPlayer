@@ -31,6 +31,7 @@ app.controller("aulaController", function ($scope, $http, $timeout, utilService,
         playerService.changeSrcAndPlay(file);
         playerService.setAulaNome(aula.nome);
         playerService.setCDNome(cdnome);
+        playerService.setBpm(bpm);
 
         window.location.href = "#/player?playing=true";
     }

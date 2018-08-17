@@ -13,7 +13,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
     function updateRange() {
         $scope.$apply(function() {
             var currentPos = playerService.getPos();
-            console.log(currentPos);
+            //console.log(currentPos);
             var date = new Date(null);
             date.setSeconds(currentPos);
             $scope.strCurrentPos = date.toISOString().substr(12, 7);
@@ -59,7 +59,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
                 stopUpdatingRange();
                 $timeout(updateRange, 1);
             });
-        })
+        });
     }
 
     $scope.togglePlayPause = function() {
@@ -74,23 +74,34 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
 
     $scope.setPos = function($event) {
         var posToSet = $scope.rangeValue * duration / 100.0;
-        console.log($scope.rangeValue * duration / 100.0);
+        //console.log($scope.rangeValue * duration / 100.0);
 
         playerService.setPos(posToSet);
         playerService.getSound().once('load', updateRange);
     }
 
+    $scope.setBpm = function(event) {
+        var newBpm = event.value;
+        var realBpm = playerService.getBpm();
+        var newSpeed = newBpm / realBpm;
+        playerService.getSound().rate(newSpeed);
+    }
+
     $scope.eventPrint = function($event) {
         console.log($event);
     }
-    
+
     $("#slider").roundSlider({
         radius: 115,
         width: 55,
+        max: 4.0 * playerService.getBpm(), // BPM DA MUSICA * 4.0 (que eh o maximo do howler)
+        min: 0.5 * playerService.getBpm(), // BPM DA MUSICA * 0.5 (que eh o minimo do howler)
+        step: 0.1,
+        endAngle: 3.5 * playerService.getBpm() * 20, // DEVE SER SEMPRE MAX * 20 (se alterar aqui vai ter que alterar na linha 7 do roundslider tbm) PRA TER UM CONTROLE DE STEP BOM
         handleSize: "55,20",
         handleShape: "square",
         sliderType: "default",
-        value: 91
+        value: playerService.getBpm(),
+        drag: $scope.setBpm
     });
-
 });

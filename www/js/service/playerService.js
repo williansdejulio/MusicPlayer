@@ -2,7 +2,7 @@ app.service("playerService", function ($http) {
     var idInterval;
     var aulaNome = "--";
     var cdNome = "--";
-    var bpm = 0;
+    var bpm = 100; //bpm default
 
     var sound = new Howl({
         //src: localRootFolder + "/songs/psycho.mp3",
