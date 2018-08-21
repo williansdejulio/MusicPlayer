@@ -12,7 +12,7 @@
                 <div class="inner three"></div>
             </div>
 
-            <div class="cd-holder" ng-repeat="cd in cds" ng-click="goToAula(cd.id_cd)">
+            <div class="cd-holder" ng-repeat="cd in cds | filter: search" ng-click="goToAula(cd.id_cd)">
                 <div class="cd-item">
                     <div class="cd-disc">
                         <div class="cd-hole"></div>

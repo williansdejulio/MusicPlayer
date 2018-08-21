@@ -19,8 +19,19 @@
             </div>
 
             <div class="btns-holder">
+                <div class="rewind" ng-click="rewind()">
+                    <div class="part first"></div>
+                    <div class="part "></div>
+                    <div class="text">- 15s</div>
+                </div>
                 <button ng-click="togglePlayPause()" class='btn-play' ng-class="{ 'btn-pause' : playing }"></button>
+                <div class="forward" ng-click="forward()">
+                    <div class="part"></div>
+                    <div class="part last"></div>
+                    <div class="text">+ 15s</div>
+                </div>
             </div>
+
         </div>
 
     </div>

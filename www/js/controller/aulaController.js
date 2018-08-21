@@ -6,20 +6,20 @@ app.controller("aulaController", function ($scope, $http, $timeout, utilService,
 
     $scope.aulas = [];
     $scope.loading = true;
+    $scope.hasFilters = false;
+    $scope.filterCDNome = "";
 
     $scope.init = function() {
         // var token_authorization = JSON.parse(localStorage.token_authorization); // USER INFO
         
         $timeout(function() {
             var data = "";
+
             if (params.id_cd != undefined) {
                 data = "?idCD=" + params.id_cd;
             }
-            console.log(endpoint + "API/Aula" + data);
-            $http.get(endpoint + "API/Aula" + data).then(function (result) {
-                $scope.aulas = result.data;
-                $scope.loading = false;
-            });
+
+            loadAulas(data);
         }, 1);
     }
 
@@ -34,6 +34,25 @@ app.controller("aulaController", function ($scope, $http, $timeout, utilService,
         playerService.setBpm(bpm);
 
         window.location.href = "#/player?playing=true";
+    }
+
+    function loadAulas(data) {
+        $http.get(endpoint + "API/Aula" + data).then(function (result) {
+            $scope.aulas = result.data;
+            $scope.loading = false;
+
+            if (data != "" && $scope.aulas.length > 0) {
+                $scope.filterCDNome = $scope.aulas[0].cd.nome;
+                $scope.hasFilters = true;
+            }
+            console.log(endpoint + "API/Aula" + data);
+        });
+    }
+
+    $scope.closeFilter = function() {
+        loadAulas("");
+        $scope.hasFilters = false;
+        $scope.filterCDNome = "";
     }
 
 });

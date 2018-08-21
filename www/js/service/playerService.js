@@ -65,4 +65,10 @@ app.service("playerService", function ($http) {
         return sound.playing();
     }
 
+    this.play = function() {
+        idSound = sound.play();
+        
+        return true;
+    }
+
 });

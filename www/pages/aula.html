@@ -5,6 +5,12 @@
         <div class="search-holder">
             <input class="input-login search-icon no-margin" type="text" ng-model="search" id="usuario" placeholder="Buscar...">
         </div>
+        <div class="filter-holder" ng-show="hasFilters">
+            <div class="filter-item">
+                {{filterCDNome}}
+                <div ng-click="closeFilter()" class="filter-close">&times;</div>
+            </div>
+        </div>
         <div class="aula-container">
             <div class="loader" ng-show="loading">
                 <div class="inner one"></div>
@@ -12,7 +18,7 @@
                 <div class="inner three"></div>
             </div>
 
-            <div class="aula-item" ng-repeat="aula in aulas" ng-click="goToPlayer(aula)">
+            <div class="aula-item" ng-repeat="aula in aulas | filter: search" ng-click="goToPlayer(aula)">
                 <div class="aula-disc cd-disc">
                     <div class="cd-hole"></div>
                 </div>
