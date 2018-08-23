@@ -3,6 +3,12 @@
 
     <div class="content-full bg-black" ng-init="init()">
         <div class="player-container">
+            
+            <div class="player-info">
+                <div class="player-song-name white">{{aulaNome}}</div>
+                <div class="player-info-name light-gray">{{cdNome}}</div>
+            </div>
+
             <div class="slider-container">
                 <div id="slider"></div>
             </div>
@@ -13,11 +19,6 @@
                 <div class="time-info">{{strDuration}}</div>
             </form>
             
-            <div class="player-info">
-                <div class="player-song-name white">{{aulaNome}}</div>
-                <div class="player-info-name light-gray">{{cdNome}}</div>
-            </div>
-
             <div class="btns-holder">
                 <div class="rewind" ng-click="rewind()">
                     <div class="part first"></div>

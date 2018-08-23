@@ -1021,40 +1021,29 @@ textarea:disabled{
 
 #slider .rs-tooltip {
     color: #ffffff;
-    font-size: 28px;
-}
-/*
-#musicRange,
-#musicRange::-webkit-slider-runnable-track,
-#musicRange::-webkit-slider-thumb {
-    -webkit-appearance: none;
-}
-#musicRange::-webkit-slider-runnable-track {
-    width: 200px;
-    height: 10px;
-    background: #AAA;
-}
-#musicRange::-webkit-slider-thumb {
-    position: relative;
-    height: 30px;
-    width: 30px;
-    margin-top: -10px;
-    background: steelblue;
-    border-radius: 50%;
-    border: 2px solid white;
+    font-size: 25px;
 }
 
-#musicRange::-webkit-slider-thumb::before {
-    position: absolute;
+.rs-inner:before {
     content: '';
-    height: 10px; 
-    width: 500px; 
-    left: -502px; 
-    top: 8px; 
-    background: #777;
+    background: #1b1b1b;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
-*/
 
+.rs-inner:after {
+    content: 'BPM';
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 22px;
+    font-size: 25px;
+}
 
 /* CDs */
 
@@ -1290,6 +1279,7 @@ textarea:disabled{
 .time-info {
     line-height: 25px;
     padding: 0 7px;
+    font-size: 14px;
 }
 
 .slider-container {
