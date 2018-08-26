@@ -27,6 +27,7 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
     <preference name="SplashShowOnlyFirstTime" value="true|false" />
-    <engine name="browser" spec="^5.0.3" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <engine name="android" spec="^7.0.0" />
+    <engine name="browser" spec="^5.0.4" />
 </widget>
