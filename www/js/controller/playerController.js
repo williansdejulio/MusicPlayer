@@ -13,7 +13,6 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
     function updateRange() {
         $scope.$apply(function() {
             var currentPos = playerService.getPos();
-            //console.log(currentPos);
             var date = new Date(null);
             date.setSeconds(currentPos);
             $scope.strCurrentPos = date.toISOString().substr(12, 7);
@@ -44,7 +43,6 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
     $scope.init = function() {
         var params = utilService.getParameters();
 
-        console.log(params);
         if (params.playing || playerService.isPlaying()) {
             $scope.playing = true;
             loadDuration();

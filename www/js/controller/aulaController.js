@@ -1,8 +1,7 @@
-app.controller("aulaController", function ($scope, $http, $timeout, utilService, playerService) {
+app.controller("aulaController", function ($scope, $http, $timeout, utilService, playerService, aulaService) {
     $("html, body").scrollTop(0);    
 
     var params = utilService.getParameters();
-    console.log(params);
 
     $scope.aulas = [];
     $scope.loading = true;
@@ -37,9 +36,25 @@ app.controller("aulaController", function ($scope, $http, $timeout, utilService,
     }
 
     function loadAulas(data) {
+        /* INICIO - TESTE SQLITE ----------------------- \/ \/ \/ \/ \/ \/ \/ \/ \/ */
+
+        var objAula_TESTE = {"id_aula":23,"nome":"Habits - Tove Lo","cd":{"id_cd":8,"nome":"teste","duracao":0,"imagem":"../upload/Screenshot from 2018-08-01 16-05-38.png","ativo":true},"bpm":110,"arquivo":"../upload/Tove Lo - Habits (Stay High)[1].mp3","ativo":true};
+        
+        aulaService.insertAula(objAula_TESTE).then(function(idAula) {
+            // CASO FOR FAZER ALGO APÓS O INSERT, USA O THEN
+            // NESSE CASO, EU VOU SELECIONAR O OBJETO QUE EU ACABEI DE INSERIR (USANDO O GETAULA)
+            
+            aulaService.getAula(idAula).then(function(objAula) {
+                console.log(objAula);
+            });
+        });
+
+        /* FIM - TESTE SQLITE -------------------------- /\ /\ /\ /\ /\ /\ /\ /\ /\ */
+
         $http.get(endpoint + "API/Aula" + data).then(function (result) {
             $scope.aulas = result.data;
             $scope.loading = false;
+            x = result.data;
 
             if (data != "" && $scope.aulas.length > 0) {
                 $scope.filterCDNome = $scope.aulas[0].cd.nome;
