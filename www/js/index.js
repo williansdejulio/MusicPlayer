@@ -2,12 +2,6 @@ var platform;
 var rootFS;
 var db;
 
-function gotFS(fileSystem) {
-    console.log("got filesystem: "+fileSystem.name); // displays "persistent"
-    console.log(fileSystem.root); // displays "/"
-    rootFS = fileSystem.root;
-}
-
 var cordovaApp = {
     // Application Constructor
     initialize: function() {
@@ -22,10 +16,6 @@ var cordovaApp = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, function(){
-            console.log("error requesting LocalFileSystem");
-        });
         /*alert("PENIS2");
         console.log("PENIS2");
 
@@ -35,22 +25,32 @@ var cordovaApp = {
         } else {
             window.location.replace("#/login");
         }*/
-        setTimeout(function (){
-            var fileTransfer = new FileTransfer();
-            var uri = encodeURI("http://18.228.89.141/upload/Yellow.mp3");
-            var fileURL = rootFS.toURL();
 
-            fileTransfer.download(
-                uri,
-                fileURL,
-                function(entry) {
-                    console.log("download complete: " + entry.toURL());
-                },
-                function(error) {
-                    console.log(error);
-                }
-            );
-        }, 2000);
+        var fileTransfer = new FileTransfer();
+        var uri = encodeURI("http://18.228.89.141//upload/Tove Lo - Habits (Stay High)[1].mp3");
+        var fileURL = cordova.file.externalApplicationStorageDirectory + "/edu0/Ahjklswe123sdfs.dat";
+
+        /*fileTransfer.onprogress = function(progressEvent) {
+            if (progressEvent.lengthComputable) {
+                loadingStatus.setPercentage(progressEvent.loaded / progressEvent.total);
+            } else {
+                loadingStatus.increment();
+            }
+            // FUNCIONA
+            console.log(progressEvent.loaded / progressEvent.total);
+        };*/
+
+        fileTransfer.download(
+            uri,
+            fileURL,
+            function(entry) {
+                alert("download complete: " + entry.toURL());
+            },
+            function(error) {
+                alert("download error:" + error.target);
+                // TRATAR ISSO AQUI DEPOIS
+            }
+        );
         
         window.screen.orientation.lock('portrait');
 

@@ -28,6 +28,6 @@
     <preference name="SplashMaintainAspectRatio" value="true|false" />
     <preference name="SplashShowOnlyFirstTime" value="true|false" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
-    <engine name="android" spec="^7.0.0" />
     <engine name="browser" spec="^5.0.4" />
+    <engine name="android" spec="^7.0.0" />
 </widget>

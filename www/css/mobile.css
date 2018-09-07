@@ -1196,7 +1196,7 @@ textarea:disabled{
     border-color: transparent transparent transparent #dddddd;
     transition: 160ms all ease;
     border-style: solid;
-    border-width: 37px 0 37px 60px;
+    border-width: 30px 0 30px 48px;
     outline: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
@@ -1248,7 +1248,7 @@ textarea:disabled{
     border-color: transparent #dddddd transparent transparent;
     transition: 160ms all ease;
     border-style: solid;
-    border-width: 20px 30px 20px 0px;
+    border-width: 16px 24px 16px 0px;
     outline: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
@@ -1263,7 +1263,7 @@ textarea:disabled{
     border-color: transparent transparent transparent #dddddd;
     transition: 160ms all ease;
     border-style: solid;
-    border-width: 20px 0 20px 30px;
+    border-width: 16px 0 16px 24px;
     outline: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
