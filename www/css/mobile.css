@@ -1191,7 +1191,7 @@ textarea:disabled{
     background: transparent;
     box-sizing: border-box;
     width: 0;
-    height: 74px;
+    height: 60px;
     margin: auto 0 auto 12px;
     border-color: transparent transparent transparent #dddddd;
     transition: 160ms all ease;
@@ -1244,7 +1244,7 @@ textarea:disabled{
     background: transparent;
     box-sizing: border-box;
     width: 0;
-    height: 40px;
+    height: 30px;
     border-color: transparent #dddddd transparent transparent;
     transition: 160ms all ease;
     border-style: solid;
@@ -1259,7 +1259,7 @@ textarea:disabled{
     background: transparent;
     box-sizing: border-box;
     width: 0;
-    height: 40px;
+    height: 30px;
     border-color: transparent transparent transparent #dddddd;
     transition: 160ms all ease;
     border-style: solid;

@@ -2,6 +2,19 @@ var platform;
 var rootFS;
 var db;
 
+function getIMEI() {
+    window.plugins.imei.get(
+        function(imei) {
+            console.log("got imei: " + imei);
+            // TODO: POST IMEI TO API
+        },
+        function() {
+            console.log("error loading imei");
+            // TODO: IMEI NÃO EXISTENTE
+        }
+    );
+}
+
 var cordovaApp = {
     // Application Constructor
     initialize: function() {
@@ -15,7 +28,31 @@ var cordovaApp = {
     //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
+    
     onDeviceReady: function() {
+        var Permission = window.plugins.Permission
+        var permission = 'android.permission.READ_PHONE_STATE'
+        
+        Permission.has(permission, function(results) {
+            if (!results[permission]) {
+                Permission.request(permission, function(result) {
+                    if (result[permission]) {
+                        // PERMITIU
+                        console.log("permission is granted");
+                        getIMEI();
+                    } else {
+                        // NÃO PERMITIU
+                        // TODO: IMEI NÃO PERMITIDO
+                    }
+                }, alert)
+            } else {
+                // JÁ FOI PERMITIDO ANTERIORMENTE
+                getIMEI();
+            }
+        }, alert);
+        
+        console.log("PASSOU");
+
         /*alert("PENIS2");
         console.log("PENIS2");
 
@@ -24,13 +61,13 @@ var cordovaApp = {
             window.location.replace("#/create-account");
         } else {
             window.location.replace("#/login");
-        }*/
+        }
 
         var fileTransfer = new FileTransfer();
         var uri = encodeURI("http://18.228.89.141//upload/Tove Lo - Habits (Stay High)[1].mp3");
         var fileURL = cordova.file.externalApplicationStorageDirectory + "/edu0/Ahjklswe123sdfs.dat";
 
-        /*fileTransfer.onprogress = function(progressEvent) {
+        fileTransfer.onprogress = function(progressEvent) {
             if (progressEvent.lengthComputable) {
                 loadingStatus.setPercentage(progressEvent.loaded / progressEvent.total);
             } else {
@@ -38,7 +75,7 @@ var cordovaApp = {
             }
             // FUNCIONA
             console.log(progressEvent.loaded / progressEvent.total);
-        };*/
+        };
 
         fileTransfer.download(
             uri,
@@ -51,7 +88,7 @@ var cordovaApp = {
                 // TRATAR ISSO AQUI DEPOIS
             }
         );
-        
+        */
         window.screen.orientation.lock('portrait');
 
         window.location.replace("#/splash");

@@ -13,12 +13,21 @@
     "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "com.nullit.musicplayer"
     },
+    "cordova-plugin-imei": {
+      "PACKAGE_NAME": "com.nullit.musicplayer"
+    },
     "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.nullit.musicplayer"
+    },
+    "cordova-plugin-permission": {
       "PACKAGE_NAME": "com.nullit.musicplayer"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.nullit.musicplayer"
+    },
+    "cordova-plugin-network-information": {
       "PACKAGE_NAME": "com.nullit.musicplayer"
     }
   }
