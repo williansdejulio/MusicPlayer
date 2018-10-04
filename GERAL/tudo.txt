@@ -1,0 +1,122 @@
+TRIAL
+	-Expira em 7 dias e quando expira, abre um modal que redireciona para 
+whatsapp (isso já está no login.html) - lançar alguma mensagem: "Ops! Sua versão teste expirou...";
+	-Aparece na tela que é uma versão trial e expira em 7 dias;
+	-Não aparece Login enquanto está em Trial;
+	-Quando expirar, aparece a tela de login e senha.
+
+APK
+	- Vai mandar o instalador pelo link com instruções para instalação;
+
+GERAL
+	- Número máximo de downloads = 10.
+
+ADMIN
+	- Aumentar ou não o número de downloads limitante na parte de admin.
+	- Quer ver a ultima data de login de um cara;
+	- Pode tirar a parte do tempo de duração do CD no admin E IMAGEM TBM;
+	- Pra inserir cliente - Nome completo, senha login, data inicio e data final e celular, checklist para marcar os professores e data de expiração de cada professor.
+	- Inserir professor: só o nome.
+	- Colocar tudo ativo por default.
+	- Inserir categorias: só o nome (alongamento, internacional, latino, etc. - ele que vai inserir)
+
+SPLASH SCREEN 
+	- logo: redondo com estrela;
+	- fontes e cores a gente faz;
+	- faz todo o design;
+	- Music Factory For Body escrito;
+	- Estrela com as pontas coloridas.
+
+LOGIN E SENHA
+	- Esqueci minha senha (redireciona pro Paulo pelo whats)
+	- Msg: Olá Paulinho, esqueci meu Login e Senha. Poderia me enviar por gentileza? Meu nome é:  
+	- Ainda não é cliente? Adquirir uma conta.
+	- Msg: Olá Paulinho, gostaria de informações para continuar utilizando o App. Meu nome é: 
+
+PLAYER
+	- Vai ser a primeira tela com a musica de play do CD mais recente;
+	- Fazer responsividade pra telas menores depois.
+	* Aumentar a fonte do "CD 123" que fica em cima do alterador do BPM, e fazer responsividade para nome de CDS grandes;
+	* Descer um pouco o alterador de BPM;
+	* Diminuir os botões de play e proporcionalmente os outros;
+	* Mudar pra avançar ou retroceder 30 segundos e colocar em cima, com um tamanho de fonte igual do tempo;
+	* Colocar o tempinho em cima do slider e aumentar o tamanho tanto do slider quanto da fonte;
+	* Drag and drown do slider (SUGESTAO APENAS);
+	* Ao invés de escrever Player, escreve MFFB na parte de Player. Dos outros mantém.
+	- Cor cinza-claro;
+	- Fazer a tela colorida
+
+AULAS
+	- Deixar degradê na amostragem dos CDS, faixa cinza;
+	* Ordenar por BPM (desc), e CD (desc);
+	* Mostrar na ordem: BPM - CD - Aula, com o mesmo layout.
+	- Ordenar por BPM caso clique em CD.
+	- Tirar a busca e o "x" do filtro CASO clique em CD;
+	- Vai ter um botao pra fazer download (só desticka quando ele remove lá no downloads);
+
+CDS
+	- Mostrar categorias (opção para todas e para as outras categorias, igual o de selecionar professores em CD's especiais).
+	- Mostrar 4 CD's por linha ao invés de 2;
+	- Automaticamente ajustar o tamanho da fonte, conforme o tamanho do nome do CD;
+	- Deixar colorido (degradê tbm);
+	- Maior nome de CD: CD 001 HIDRO FESTA VOL.1;
+
+CD ESPECIAIS:
+	- Lista todos os professores.
+	- Mostra as musicas do professor clicado com título, bpm, duração, nome do professor e quem sabe uma imagem e opção para baixar.
+
+MUSICAS BAIXADAS
+	- Wireframe no papel
+	- Dos outros professores tbm
+
+NOTIFICAÇÕES:
+	- Botãozinho vermelho no menu, quando clica abre o menu com "notificações" e o botazinho vermelho do lado;
+	- Na parte admin vai ter Título e Conteúdo por Notificação;
+	- Vai ordenar por data;
+	- Ele exclui a notificação no admin;
+	- 5 dias e 1 dias antes de expirar; 
+
+TERMOS DE USO:
+	- No menu e no login;
+	- Linkado ao administrador.
+
+VAI USAR LOCAWEB
+MANDAR MODELO DO EXCEL PRA ELE MANDAR OS CDS E AULAS PRA INSERIR NO BANCO
+HABILITAR MANDAR MUSICA GRANDE MAIS DE 100MB AO INVÉS DE 4MB
+
+DOWNLOAD ARQUIVOS
+cordova plugin add cordova-plugin-file-transfer
+
+var fileTransfer = new FileTransfer();
+var uri = encodeURI("http://18.228.89.141//upload/Tove Lo - Habits (Stay High)[1].mp3");
+var fileURL = cordova.file.externalApplicationStorageDirectory + "Habits.mp3";
+fileURL = encodeURI(fileURL);
+
+fileTransfer.onprogress = function(progressEvent) {
+    if (progressEvent.lengthComputable) {
+        loadingStatus.setPercentage(progressEvent.loaded / progressEvent.total);
+    } else {
+        loadingStatus.increment();
+    }
+    // FUNCIONA
+    console.log(progressEvent.loaded / progressEvent.total);
+};
+
+fileTransfer.download(
+    uri,
+    fileURL,
+    function(entry) {
+        console.log("download complete: " + entry.toURL());
+    },
+    function(error) {
+        console.log("download error:" + error.target);
+        // TRATAR ISSO AQUI DEPOIS
+    }
+);
+
+PRA REDIRECIONAR PRO WHATS
+<a href="https://api.whatsapp.com/send?phone=5511991503769&text=Ola">Send Message</a>
+
+
+
+

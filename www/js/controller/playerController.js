@@ -96,7 +96,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
     }
 
     $scope.forward = function() {
-        var pos = Math.min(duration, playerService.getPos() + 15);
+        var pos = Math.min(duration, playerService.getPos() + 30);
 
         $(".forward .text").css("transform", "translateX(8px)");
         $(".forward .text").css("font-size", "16px");
@@ -114,7 +114,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
     }
 
     $scope.rewind = function() {
-        var pos = Math.max(0, playerService.getPos() - 15);
+        var pos = Math.max(0, playerService.getPos() - 30);
         
         $(".rewind .text").css("transform", "translateX(-8px)");
         $(".rewind .text").css("font-size", "16px");

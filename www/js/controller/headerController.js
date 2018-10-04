@@ -7,7 +7,7 @@ app.controller("headerController", function ($scope, $location) {
     /* POPULAR TÍTULO DA PÁGINA */
     $scope.pageTitle = '';
     if ($scope.pathPage == '/player') {
-        $scope.pageTitle = 'PLAYER';
+        $scope.pageTitle = 'MFFB';
     } else if ($scope.pathPage == '/aula') {
         $scope.pageTitle = 'AULAS';
     } else if ($scope.pathPage == '/cd') {

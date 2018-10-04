@@ -998,7 +998,7 @@ textarea:disabled{
     font-size: 1.7em;
     color: #ffffff;
     text-align: center;
-    margin: 35px auto 25px;
+    margin: 0px auto 25px;
 }
 
 #slider {
@@ -1227,12 +1227,23 @@ textarea:disabled{
     text-align: right;
 }
 
-.forward .text,
+.forward .text {
+    position: absolute;
+    display: block;
+    bottom: 40px;
+    left: 20px;
+    font-size: 14px;
+    color: #969696;
+    width: 100%;
+    transition: all 0.25s ease;
+}
+
 .rewind .text {
     position: absolute;
     display: block;
-    bottom: -18px;
-    font-size: 12px;
+    bottom: 40px;
+    right: 20px;
+    font-size: 14px;
     color: #969696;
     width: 100%;
     transition: all 0.25s ease;
@@ -1276,14 +1287,22 @@ textarea:disabled{
     flex-grow: 1;
 }
 
-.time-info {
+.time-info-left {
+    position: absolute;
     line-height: 25px;
-    padding: 0 7px;
+    font-size: 14px;
+}
+
+.time-info-right {
+    line-height: 25px;
+    position: fixed;
+    right: 8px;
     font-size: 14px;
 }
 
 .slider-container {
     width: 100%;
+    margin-top: 5px;
 }
 
 .player-info {
@@ -1291,7 +1310,7 @@ textarea:disabled{
 }
 
 .player-song-name {
-    font-size: 30px;
+    font-size: 23px;
     font-weight: bold;
     text-align: center;
 }

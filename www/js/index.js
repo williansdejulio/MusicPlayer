@@ -30,7 +30,7 @@ var cordovaApp = {
     // 'pause', 'resume', etc.
     
     onDeviceReady: function() {
-        var Permission = window.plugins.Permission
+        /*var Permission = window.plugins.Permission
         var permission = 'android.permission.READ_PHONE_STATE'
         
         Permission.has(permission, function(results) {
@@ -51,7 +51,7 @@ var cordovaApp = {
             }
         }, alert);
         
-        console.log("PASSOU");
+        console.log("PASSOU");*/
 
         /*alert("PENIS2");
         console.log("PENIS2");
