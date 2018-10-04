@@ -139,7 +139,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
         step: 0.1,
         endAngle: 3.5 * playerService.getBpm() * 20, // DEVE SER SEMPRE MAX * 20 (se alterar aqui vai ter que alterar na linha 7 do roundslider tbm) PRA TER UM CONTROLE DE STEP BOM
         editableTooltip: false,
-        handleSize: "55,25",
+        handleSize: "55,20",
         handleShape: "square",
         sliderType: "default",
         value: playerService.getSound().rate() * playerService.getBpm(),
