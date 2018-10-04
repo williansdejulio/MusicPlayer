@@ -3,13 +3,13 @@
     <div class="dark-body animated fade-in" ng-show="isMenuOpen" ng-click="closeMenu()"></div>
 
     <div class="header">
-        <img class="go-back-icon" src="img/voltar-icon.png" alt="Voltar" ng-click="goBack()">
+        <img class="go-back-icon" src="img/dark-icons/voltar-icon.png" alt="Voltar" ng-click="goBack()">
         
         <h1 class="title-header">{{pageTitle}}</h1>
 
         <div class="alert-div">
             <span class="alert-number" style="display: none;">5</span>
-            <img class="menu-icon" src="img/menu-icon.png" alt="Menu" ng-click="openMenu()">
+            <img class="menu-icon" src="img/dark-icons/menu-icon.png" alt="Menu" ng-click="openMenu()">
         </div>
     </div>
 
@@ -22,7 +22,7 @@
         <ul class="menu-list">
             
             <a href="#/player">
-                <li class="menu-link white" ng-class="{'active' : pathPage == '/player'}" ng-click="closeMenu()">
+                <li class="menu-link black" ng-class="{'active' : pathPage == '/player'}" ng-click="closeMenu()">
                     <div class="menu-icon-container">
                         <img class="full-img" src="img/icon-home.png" alt="Player">
                     </div>
@@ -30,7 +30,7 @@
                 </li>
             </a>
             <a href="#/aula">
-                <li class="menu-link white" ng-class="{'active' : pathPage == '/aula'}" ng-click="closeMenu()">
+                <li class="menu-link black" ng-class="{'active' : pathPage == '/aula'}" ng-click="closeMenu()">
                     <div class="menu-icon-container">
                         <img class="full-img" src="img/icon-songs.png" alt="Aulas">
                     </div>
@@ -38,14 +38,14 @@
                 </li>
             </a>
             <a href="#/cd">
-                <li class="menu-link white" ng-class="{'active' : pathPage == '/cd'}" ng-click="closeMenu()">
+                <li class="menu-link black" ng-class="{'active' : pathPage == '/cd'}" ng-click="closeMenu()">
                     <div class="menu-icon-container">
                         <img class="full-img" src="img/icon-playlist.png" alt="CDs">
                     </div>
                     CDs
                 </li>
             </a>
-            <li class="menu-link white" ng-click="logout()">
+            <li class="menu-link black" ng-click="logout()">
                 <div class="menu-icon-container">
                     <img class="full-img" src="img/icon-logout.png" alt="Sair">
                 </div>
