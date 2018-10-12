@@ -16,7 +16,7 @@
     <div id="menu" class="menu">
 
         <div class="menu-header">
-            <h1 class="title-header">NOME DO USUÁRIO</h1>
+            <h1 class="title-header">{{username}}</h1>
         </div>
 
         <ul class="menu-list">
@@ -37,12 +37,44 @@
                     AULAS
                 </li>
             </a>
-            <a href="#/cd">
+            <a href="#/selecao-categoria">
                 <li class="menu-link black" ng-class="{'active' : pathPage == '/cd'}" ng-click="closeMenu()">
                     <div class="menu-icon-container">
                         <img class="full-img" src="img/icon-playlist.png" alt="CDs">
                     </div>
                     CDs
+                </li>
+            </a>
+            <a href="#/selecao-professor">
+                <li class="menu-link black" ng-class="{'active' : pathPage == '/cd-especial'}" ng-click="closeMenu()">
+                    <div class="menu-icon-container">
+                        <img class="full-img" src="img/icon-playlist.png" alt="CDs">
+                    </div>
+                    CDs ESPECIAIS
+                </li>
+            </a>
+            <a href="#/downloads">
+                <li class="menu-link black" ng-class="{'active' : pathPage == '/downloads'}" ng-click="closeMenu()">
+                    <div class="menu-icon-container">
+                        <img class="full-img" src="img/icon-playlist.png" alt="CDs">
+                    </div>
+                    DOWNLOADS
+                </li>
+            </a>
+            <a href="#/notificacao">
+                <li class="menu-link black" ng-class="{'active' : pathPage == '/notificacao'}" ng-click="closeMenu()">
+                    <div class="menu-icon-container">
+                        <img class="full-img" src="img/icon-playlist.png" alt="CDs">
+                    </div>
+                    NOTIFICAÇÕES
+                </li>
+            </a>
+            <a href="#/termos">
+                <li class="menu-link black" ng-class="{'active' : pathPage == '/termos'}" ng-click="closeMenu()">
+                    <div class="menu-icon-container">
+                        <img class="full-img" src="img/icon-playlist.png" alt="CDs">
+                    </div>
+                    TERMOS DE USO
                 </li>
             </a>
             <li class="menu-link black" ng-click="logout()">

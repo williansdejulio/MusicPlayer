@@ -13,14 +13,14 @@
                 <div id="slider"></div>
             </div>
 
-            <form name="rangeForm" id="range-controller">
+            <form name="rangeForm" id="range-controller" ng-show="!loadingFirstMusic">
                 <div class="time-info-left">{{strCurrentPos}}</div>
                 <div class="time-info-right">{{strDuration}}</div>
             </form>
 
-            <input id="musicRange" name="range" hm-swipe="setPos($event)" hm-tap="setPos($event)" hm-recognizer-options="[{'type': 'swipe','velocity': 0}]" ng-model="rangeValue" type="range" min="0" max="100" value="0" step="0.1" />
+            <input id="musicRange" ng-show="!loadingFirstMusic" name="range" hm-swipe="setPos($event)" hm-tap="setPos($event)" hm-recognizer-options="[{'type': 'swipe','velocity': 0}]" ng-model="rangeValue" type="range" min="0" max="100" value="0" step="0.1" />
             
-            <div class="btns-holder">
+            <div class="btns-holder" ng-show="!loadingFirstMusic">
                 <div class="rewind" ng-click="rewind()">
                     <div class="part first"></div>
                     <div class="part "></div>
@@ -32,6 +32,12 @@
                     <div class="part last"></div>
                     <div class="text">+ 30s</div>
                 </div>
+            </div>
+
+            <div class="loader" ng-show="loadingFirstMusic">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
             </div>
 
         </div>

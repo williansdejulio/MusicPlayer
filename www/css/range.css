@@ -12,7 +12,7 @@ input[type=range]::-webkit-slider-runnable-track {
     height: 25px;
     cursor: pointer;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.86), 0px 0px 0px rgba(13, 13, 13, 0.86);
-    background: #cccccc;
+    background: #e6e6e6;
     border-radius: 1.7px;
     border: 0px solid #010101;
 }

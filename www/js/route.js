@@ -24,4 +24,28 @@
             templateUrl: 'pages/cd.html',
             controller: 'cdController'
         })
+        .when('/cd-especial', {
+            templateUrl: 'pages/cd-especial.html',
+            controller: 'cdEspecialController'
+        })
+        .when('/downloads', {
+            templateUrl: 'pages/downloads.html',
+            controller: 'downloadsController'
+        })
+        .when('/notificacao', {
+            templateUrl: 'pages/notificacao.html',
+            controller: 'notificacaoController'
+        })
+        .when('/selecao-categoria', {
+            templateUrl: 'pages/selecao-categoria.html',
+            controller: 'selecaoCategoriaController'
+        })
+        .when('/selecao-professor', {
+            templateUrl: 'pages/selecao-professor.html',
+            controller: 'selecaoProfessorController'
+        })
+        .when('/termos', {
+            templateUrl: 'pages/termos.html',
+            controller: 'termosController'
+        })
 });

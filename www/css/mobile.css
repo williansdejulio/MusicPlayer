@@ -160,7 +160,7 @@ html {
 }
 
 .bg-white {
-    background-color: #e5e5e5;
+    background-color: #cccccc;
 }
 
 .bg-gray {
@@ -667,13 +667,13 @@ textarea:disabled{
 /* SPLASH PAGE */
 
 .bg-splash {
-    background: #101010;
+    background: #cccccc;
 }
 
 /* LOGIN */
 
 .bg-login {
-    background: #101010;
+    background: #cccccc;
 }
 
 .login {
@@ -812,7 +812,7 @@ textarea:disabled{
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: #cccccc;
+    background-color: #e6e6e6;
     z-index: 1;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
 }
@@ -979,8 +979,17 @@ textarea:disabled{
     font-weight: bold;
 }
 
-.info-name {
-    font-size: 12px;
+.aula-info-name {
+    font-size: 18px;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-weight: bold;
+}
+
+.cd-info-name {
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .search-holder {
@@ -1006,7 +1015,7 @@ textarea:disabled{
 }
 
 #slider .rs-path-color  {
-    background-color: #cccccc;
+    background-color: #e6e6e6;
     box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.24);
 }
 #slider .rs-handle  {
@@ -1017,7 +1026,7 @@ textarea:disabled{
     border: none;
 }
 #slider .rs-bg-color {
-    background-color: #e6e6e6;
+    background-color: #cccccc;
 }
 
 #slider .rs-outer {
@@ -1036,7 +1045,7 @@ textarea:disabled{
 
 .rs-inner:before {
     content: '';
-    background: #cccccc;
+    background: #e6e6e6;
     position: absolute;
     width: 100%;
     height: 3px;
@@ -1055,6 +1064,7 @@ textarea:disabled{
     text-align: center;
     bottom: 18px;
     font-size: 28px;
+    font-weight: bolder;
 }
 
 /* CDs */
@@ -1067,7 +1077,7 @@ textarea:disabled{
 }
 
 .cd-holder {
-    flex: 0 0 50%;
+    flex: 0 0 33.333%;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -1084,7 +1094,7 @@ textarea:disabled{
 .cd-item {
     position: relative;
     flex-grow: 1;
-    background: #1a1a1a;
+    background: #e6e6e6;
     color: white;
     display: flex;
     justify-content: center;
@@ -1106,7 +1116,7 @@ textarea:disabled{
 
 .cd-hole {
     position: absolute;
-    background: #1a1a1a;
+    background: #e6e6e6;
     border-radius: 50%;
     margin: auto;
     width: 15%;
@@ -1120,12 +1130,12 @@ textarea:disabled{
 .song-info {
     position: absolute;
     bottom: 0;
-    color: #ffffff;
-    background: hsla(0, 0%, 10%, 0.8);
+    color: #000000;
+    background: hsla(0, 0%, 90%, 0.8);
     width: 100%;
     overflow: hidden;
     text-align: center;
-    font-size: 2em;
+    /*font-size: 2em;*/
     padding: 5px 12px;
     z-index: 1;
 }
@@ -1170,7 +1180,7 @@ textarea:disabled{
 .aula-item {
     position: relative;
     display: flex;
-    background: #1a1a1a;
+    background: #e6e6e6;
     width: 100%;
     margin: 8px;
     height: 75px;
@@ -1242,22 +1252,22 @@ textarea:disabled{
 .forward .text {
     position: absolute;
     display: block;
-    bottom: 40px;
+    bottom: 35px;
     left: 20px;
-    font-size: 17px;
+    font-size: 24px;
     color: #1e64b3;
-    width: 100%;
+    width: 130%;
     transition: all 0.25s ease;
 }
 
 .rewind .text {
     position: absolute;
     display: block;
-    bottom: 40px;
+    bottom: 35px;
     right: 20px;
-    font-size: 17px;
+    font-size: 24px;
     color: #1e64b3;
-    width: 100%;
+    width: 130%;
     transition: all 0.25s ease;
 }
 
@@ -1302,14 +1312,14 @@ textarea:disabled{
 .time-info-left {
     position: absolute;
     line-height: 25px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .time-info-right {
     line-height: 25px;
     position: fixed;
     right: 8px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .slider-container {
@@ -1323,14 +1333,16 @@ textarea:disabled{
 
 .player-song-name {
     font-size: 33px;
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
-    color: #b9b92c;
+    color: #ffffff;
+    /*-webkit-text-stroke: 2px #ffff0c;*/
 }
 
 .player-info-name {
     font-size: 17px;
     text-align: center;
-    color: #b9b92c;
+    color: #ffffff;
+    font-weight: bolder;
 }
-/*e66400*/
+/*e66400, b9b92c (amarelo pra versao nao invertida de cores)*/

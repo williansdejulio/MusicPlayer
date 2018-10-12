@@ -1,6 +1,8 @@
 app.controller("headerController", function ($scope, $location) {
     $("html, body").scrollTop(0);
 
+    $scope.username = 'Usuário João';
+
     /* PEGAR O CAMINHO DA ROTA */
     $scope.pathPage = $location.path();
 
@@ -12,7 +14,15 @@ app.controller("headerController", function ($scope, $location) {
         $scope.pageTitle = 'AULAS';
     } else if ($scope.pathPage == '/cd') {
         $scope.pageTitle = 'CDs';
-    }
+    } else if ($scope.pathPage == '/cd-especial') {
+        $scope.pageTitle = 'CDs ESPECIAIS';
+    } else if ($scope.pathPage == '/downloads') {
+        $scope.pageTitle = 'BAIXADAS';
+    } else if ($scope.pathPage == '/notificacao') {
+        $scope.pageTitle = 'NOTIFICAÇÕES';
+    } else if ($scope.pathPage == '/termos') {
+        $scope.pageTitle = 'TERMOS DE USO';
+    } 
 
     /* BOTÃO VOLTAR */
     $scope.goBack = function () {

@@ -3,6 +3,7 @@ app.service("playerService", function ($http) {
     var aulaNome = "--";
     var cdNome = "--";
     var bpm = 100; //bpm default
+    var firstTimeLoading = true;
 
     var sound = new Howl({
         //src: localRootFolder + "/songs/psycho.mp3",
@@ -14,6 +15,10 @@ app.service("playerService", function ($http) {
         }
     });
 
+    this.getFirstTime = function() {
+        return firstTimeLoading;
+    }
+
     this.getSound = function() {
         return sound;
     };
@@ -22,6 +27,7 @@ app.service("playerService", function ($http) {
     this.getCDNome = function() { return this.cdNome; }
     this.getBpm = function() { return this.bpm; }
 
+    this.setNotFirstTime = function() {firstTimeLoading = false;}
     this.setAulaNome = function(aulaNome) { this.aulaNome = aulaNome; }
     this.setCDNome = function(cdNome) { this.cdNome = cdNome; }
     this.setBpm = function(bpm) { this.bpm = bpm; }
@@ -53,6 +59,18 @@ app.service("playerService", function ($http) {
             }
         });
         sound.play();
+    }
+
+    this.changeSrc = function (source) {
+        sound.unload();
+        sound = new Howl({
+            src: source,
+            html5: true,
+            buffer: true,
+            onloaderror: function (err) {
+                console.log("ERR: " + err);
+            }
+        });
     }
 
     this.togglePlayPause = function() {

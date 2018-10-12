@@ -1,4 +1,4 @@
-app.controller("playerController", function ($scope, $timeout, utilService, playerService) {
+app.controller("playerController", function ($http, $scope, $timeout, utilService, playerService) {
     $("html, body").scrollTop(0); 
 
     $scope.playing;
@@ -6,6 +6,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
     $scope.cdNome;
     $scope.strDuration = "0:00:00";
     $scope.strCurrentPos = "0:00:00";
+    $scope.loadingFirstMusic = true;
 
     var idInterval;
     var duration;
@@ -40,17 +41,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
         updateRange();
     }
 
-    $scope.init = function() {
-        var params = utilService.getParameters();
-
-        if (params.playing || playerService.isPlaying()) {
-            $scope.playing = true;
-            loadDuration();
-            startUpdatingRange();
-        } else {
-            $scope.playing = false;
-        }
-
+    function init_aux() {
         $scope.aulaNome = playerService.getAulaNome();
         $scope.cdNome = playerService.getCDNome();
 
@@ -64,6 +55,61 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
                 $timeout(updateRange, 1);
             });
         });
+
+        $("#slider").roundSlider({
+            radius: 115,
+            width: 55,
+            max: 4.0 * playerService.getBpm(), // BPM DA MUSICA * 4.0 (que eh o maximo do howler)
+            min: 0.5 * playerService.getBpm(), // BPM DA MUSICA * 0.5 (que eh o minimo do howler)
+            step: 0.1,
+            endAngle: 3.5 * playerService.getBpm() * 20, // DEVE SER SEMPRE MAX * 20 (se alterar aqui vai ter que alterar na linha 7 do roundslider tbm) PRA TER UM CONTROLE DE STEP BOM
+            editableTooltip: false,
+            handleSize: "55,20",
+            handleShape: "square",
+            sliderType: "default",
+            value: playerService.getSound().rate() * playerService.getBpm(),
+            drag: $scope.setBpm
+        });
+    }
+
+    $scope.init = function() {
+        if (!playerService.getFirstTime()) {
+            var params = utilService.getParameters();
+
+            if (params.playing || playerService.isPlaying()) {
+                $scope.playing = true;
+                loadDuration();
+                startUpdatingRange();
+            } else {
+                $scope.playing = false;
+            }
+            
+            $scope.loadingFirstMusic = false;
+            
+            init_aux();
+        } else {
+            $http.get(endpoint + "API/Aula").then(function (result) {
+                var aulaMaisNova1 = result.data[0];
+                var aulaMaisNova2 = result.data[1];
+                
+                /*Se o cd for o mesmo, significa que temos duas aulas
+                  no ultimo cd e devemos pegar a penultima aula 
+                  inclusa que é a AULA A desse CD*/
+                var aulaMaisNova = aulaMaisNova1.cd.id == aulaMaisNova2.cd.id ? aulaMaisNova2 : aulaMaisNova1;
+                
+                var file = aulaMaisNova.arquivo.replace("../", endpoint + "/");
+                playerService.changeSrc(file);
+                playerService.setAulaNome(aulaMaisNova.nome);
+                playerService.setCDNome(aulaMaisNova.cd.nome);
+                playerService.setBpm(aulaMaisNova.bpm);
+                $scope.playing = false;
+                $scope.loadingFirstMusic = false;
+
+                playerService.setNotFirstTime();
+                loadDuration();
+                init_aux();
+            });
+        }
     }
 
     $scope.togglePlayPause = function() {
@@ -99,7 +145,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
         var pos = Math.min(duration, playerService.getPos() + 30);
 
         $(".forward .text").css("transform", "translateX(8px)");
-        $(".forward .text").css("font-size", "16px");
+        $(".forward .text").css("font-size", "20px");
 
         $timeout(function() {
             $(".forward .text").css("transform", "");
@@ -117,7 +163,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
         var pos = Math.max(0, playerService.getPos() - 30);
         
         $(".rewind .text").css("transform", "translateX(-8px)");
-        $(".rewind .text").css("font-size", "16px");
+        $(".rewind .text").css("font-size", "20px");
 
         $timeout(function() {
             $(".rewind .text").css("transform", "");
@@ -130,7 +176,7 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
             startUpdatingRange();
         }
     }
-
+    /*
     $("#slider").roundSlider({
         radius: 115,
         width: 55,
@@ -144,5 +190,5 @@ app.controller("playerController", function ($scope, $timeout, utilService, play
         sliderType: "default",
         value: playerService.getSound().rate() * playerService.getBpm(),
         drag: $scope.setBpm
-    });
+    });*/
 });

@@ -12,13 +12,13 @@ GERAL
 	- Número máximo de downloads = 10.
 
 ADMIN
-	- Aumentar ou não o número de downloads limitante na parte de admin.
-	- Quer ver a ultima data de login de um cara;
-	- Pode tirar a parte do tempo de duração do CD no admin E IMAGEM TBM;
-	- Pra inserir cliente - Nome completo, senha login, data inicio e data final e celular, checklist para marcar os professores e data de expiração de cada professor.
-	- Inserir professor: só o nome.
-	- Colocar tudo ativo por default.
-	- Inserir categorias: só o nome (alongamento, internacional, latino, etc. - ele que vai inserir)
+	* Aumentar ou não o número de downloads limitante na parte de admin.
+	* Quer ver a ultima data de login de um cara;
+	* Pode tirar a parte do tempo de duração do CD no admin E IMAGEM TBM;
+	* Pra inserir cliente - Nome completo, senha login, data inicio e data final e celular, checklist para marcar os professores e data de expiração de cada professor.
+	* Inserir professor: só o nome.
+	* Colocar tudo ativo por default.
+	* Inserir categorias: só o nome (alongamento, internacional, latino, etc. - ele que vai inserir)
 
 SPLASH SCREEN 
 	- logo: redondo com estrela;
